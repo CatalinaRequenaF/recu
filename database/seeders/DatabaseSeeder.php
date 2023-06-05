@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        
+    /*    
            //Creación de 5 usuarios
            User::factory(5)
            //perfil
@@ -30,12 +30,16 @@ class DatabaseSeeder extends Seeder
 
            User::factory(5)
            //perfil
-           ->hasPost(3)->create();
+           ->hasPost(3)->create();*/
 
 
            $posts = Post::all();
            foreach ($posts as $post){
-            
+            $comment1= Comment::factory();
+            $comment2= Comment::factory();
+            $comment1->post_id=$comment1;
+            $comment2->belongsTo($post)->save();
+
            }
 
 
